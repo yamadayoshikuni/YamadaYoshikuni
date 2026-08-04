@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>山田吉邦弓具店 | ALL NIPPON KYUDOGU ASSOCIATION SHOP</title>
+<meta name="description" content="東京・飯田橋の弓道具専門店、山田吉邦弓具店。矢師として弓・矢・弽など弓道具一式を取り扱います。全日本弓道具協会加盟店。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@300;400;500;600;700&family=Cormorant+Garamond:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root{
+  --sumi:#1c1a17;
+  --sumi-soft:#2a2723;
+  --washi:#f2ece0;
+  --washi-deep:#e8dfcd;
+  --indigo:#212f42;
+  --indigo-deep:#141d2a;
+  --vermillion:#a1402c;
+  --gold:#a9884f;
+  --gold-bright:#c9a866;
+  --line:rgba(169,136,79,0.35);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--washi);
+  color:var(--sumi);
+  font-family:"Noto Sans JP",sans-serif;
+  font-weight:300;
+  line-height:1.9;
+  -webkit-font-smoothing:antialiased;
+  padding-top:72px; /* fixed header offset */
+}
+h1,h2,h3,.mincho{font-family:"Shippori Mincho",serif;}
+.eyebrow{
+  font-family:"Cormorant Garamond",serif;
+  font-style:italic;
+  letter-spacing:0.18em;
+  font-size:0.85rem;
+  color:var(--gold);
+  text-transform:uppercase;
+}
+a{color:inherit;text-decoration:none;}
+img,svg{display:block;max-width:100%;}
+.wrap{max-width:1180px;margin:0 auto;padding:0 32px;}
+ul{list-style:none;}
+
+/* ---------- header ---------- */
+header{
+  position:fixed;top:0;left:0;right:0;z-index:50;
+  background:rgba(242,236,224,0.94);
+  backdrop-filter:blur(6px);
+  border-bottom:1px solid var(--line);
+}
+.headbar{
+  max-width:1180px;margin:0 auto;padding:14px 32px;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.brandmark{display:flex;align-items:center;gap:12px;}
+.brandmark .target-icon{width:26px;height:26px;flex-shrink:0;}
+.brandmark span{font-family:"Shippori Mincho",serif;font-size:1.02rem;font-weight:600;letter-spacing:0.04em;}
+nav.mainnav{display:flex;gap:34px;font-size:0.85rem;letter-spacing:0.06em;}
+nav.mainnav a{position:relative;padding:4px 0;}
+nav.mainnav a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--vermillion);transition:width .35s ease;}
+nav.mainnav a:hover::after,nav.mainnav a.active::after{width:100%;}
+nav.mainnav a.active{color:var(--vermillion);}
+.nav-toggle{display:none;background:none;border:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;}
+.nav-toggle span{width:22px;height:1px;background:var(--sumi);}
+
+/* ---------- page hero (interior pages) ---------- */
+.page-hero{
+  position:relative;padding:170px 0 90px;overflow:hidden;
+  background:var(--indigo);color:var(--washi);
+}
+.page-hero .target-bg{
+  position:absolute;right:-8%;top:50%;transform:translateY(-50%);
+  width:min(420px,50vw);opacity:0.14;
+}
+.page-hero .wrap{position:relative;z-index:2;}
+.page-hero .eyebrow{color:var(--gold-bright);display:block;margin-bottom:16px;}
+.page-hero h1{font-size:clamp(2rem,4vw,2.8rem);font-weight:700;letter-spacing:0.04em;margin-bottom:20px;}
+.page-hero p{max-width:560px;font-size:0.95rem;color:rgba(242,236,224,0.75);}
+
+/* ---------- section shell ---------- */
+section{position:relative;padding:100px 0;}
+.section-head{margin-bottom:60px;}
+.section-head.center{text-align:center;}
+.section-head .eyebrow{display:block;margin-bottom:14px;}
+.section-head h2{font-size:clamp(1.7rem,3.2vw,2.4rem);font-weight:700;letter-spacing:0.05em;}
+
+/* ---------- photo slot (placeholder for real photography) ---------- */
+.photo-slot{
+  position:relative;
+  aspect-ratio:var(--ratio,4/3);
+  background:
+    repeating-linear-gradient(135deg,
+      var(--washi-deep) 0 2px, transparent 2px 14px),
+    var(--washi);
+  border:1px solid var(--line);
+  display:flex;align-items:flex-end;
+  overflow:hidden;
+}
+.photo-slot .cap{
+  width:100%;
+  padding:16px 18px;
+  background:linear-gradient(0deg,rgba(28,26,23,0.82),rgba(28,26,23,0));
+  color:var(--washi);
+  font-size:0.78rem;letter-spacing:0.03em;
+}
+.photo-slot .cap b{
+  display:block;font-family:"Shippori Mincho",serif;font-weight:600;font-size:0.92rem;margin-bottom:4px;
+  color:var(--gold-bright);
+}
+.photo-slot::after{
+  content:"PHOTO";
+  position:absolute;top:14px;left:16px;
+  font-family:"Cormorant Garamond",serif;font-style:italic;
+  font-size:0.78rem;letter-spacing:0.12em;color:var(--gold);
+  border:1px solid var(--line);padding:2px 10px;border-radius:2px;
+  background:rgba(242,236,224,0.7);
+}
+.photo-slot img{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;
+}
+.photo-slot.filled{background:none;}
+.photo-slot.filled::after{display:none;}
+.photo-slot.filled .cap{position:relative;z-index:1;}
+
+/* ---------- footer ---------- */
+footer{background:var(--sumi);color:rgba(242,236,224,0.75);padding:70px 0 34px;}
+.footer-top{
+  display:flex;justify-content:space-between;align-items:flex-start;
+  flex-wrap:wrap;gap:40px;padding-bottom:44px;border-bottom:1px solid rgba(242,236,224,0.12);
+}
+.footer-brand span.mincho{font-size:1.3rem;font-weight:700;color:var(--washi);display:block;margin-bottom:10px;}
+.footer-brand p{font-size:0.82rem;max-width:340px;color:rgba(242,236,224,0.55);}
+.footer-cols{display:flex;gap:70px;flex-wrap:wrap;}
+.footer-cols h4{font-size:0.78rem;letter-spacing:0.12em;color:var(--gold-bright);margin-bottom:16px;}
+.footer-cols li{font-size:0.85rem;margin-bottom:10px;color:rgba(242,236,224,0.65);}
+.footer-bottom{
+  display:flex;justify-content:space-between;align-items:center;
+  padding-top:28px;font-size:0.76rem;color:rgba(242,236,224,0.4);
+  flex-wrap:wrap;gap:10px;
+}
+
+@media (max-width:860px){
+  nav.mainnav{display:none;}
+  .nav-toggle{display:flex;}
+  .footer-top{flex-direction:column;}
+}
+
+/* ---------- hero specific ---------- */
+.hero{padding-top:0;background:var(--indigo);}
+.hero-grid{display:grid;grid-template-columns:44% 56%;min-height:88vh;}
+.hero-photo{position:relative;overflow:hidden;background:var(--sumi);}
+.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 22%;display:block;}
+.hero-photo .cap{
+  position:absolute;left:0;right:0;bottom:0;
+  padding:16px 20px;font-size:0.76rem;letter-spacing:0.03em;color:var(--washi);
+  background:linear-gradient(0deg,rgba(28,26,23,0.75),rgba(28,26,23,0));
+}
+.hero-text{display:flex;align-items:center;padding:60px 64px;color:var(--washi);}
+.hero-text .eyebrow{color:var(--gold-bright);display:block;margin-bottom:18px;}
+.hero-text h1{
+  font-size:clamp(2rem,3.6vw,2.7rem);font-weight:700;line-height:1.65;
+  margin-bottom:26px;
+}
+.hero-text p{font-size:0.95rem;color:rgba(242,236,224,0.78);margin-bottom:34px;max-width:440px;}
+.hero-cta-row{display:flex;gap:24px;flex-wrap:wrap;}
+.btn{
+  display:inline-flex;align-items:center;gap:10px;font-size:0.85rem;letter-spacing:0.06em;
+  padding:14px 26px;border:1px solid var(--gold-bright);
+}
+.btn.primary{background:var(--gold-bright);color:var(--sumi-soft);}
+.btn.ghost{color:var(--washi);}
+
+.intro{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center;}
+.intro .photo-slot{--ratio:4/5;}
+.intro-text p{font-size:0.95rem;color:#3c382f;margin-bottom:22px;}
+.intro-text p.lead{
+  font-family:"Shippori Mincho",serif;font-size:1.22rem;font-weight:600;line-height:1.9;color:var(--sumi);
+}
+.link-more{
+  display:inline-flex;align-items:center;gap:8px;font-size:0.85rem;
+  border-bottom:1px solid var(--vermillion);color:var(--vermillion);padding-bottom:4px;
+}
+
+/* teaser & access */
+.products-teaser{background:var(--indigo);color:var(--washi);}
+.products-teaser .section-head h2{color:var(--washi);}
+.products-teaser .eyebrow{color:var(--gold-bright);}
+.teaser-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(242,236,224,0.14);border:1px solid rgba(242,236,224,0.14);margin-bottom:50px;}
+.teaser-card{background:var(--indigo);padding:36px 26px;transition:background .3s ease;}
+.teaser-card:hover{background:var(--indigo-deep);}
+.teaser-card .icon{width:34px;height:34px;margin-bottom:18px;color:var(--gold-bright);}
+.teaser-card h3{font-size:1.02rem;font-weight:600;margin-bottom:6px;}
+.teaser-card p{font-size:0.82rem;color:rgba(242,236,224,0.62);}
+.products-teaser .link-more{color:var(--gold-bright);border-color:var(--gold-bright);}
+
+.access-teaser{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center;}
+.access-teaser table{width:100%;border-collapse:collapse;font-size:0.92rem;}
+.access-teaser td{padding:14px 0;border-bottom:1px solid var(--line);}
+.access-teaser td:first-child{width:110px;color:var(--gold);font-family:"Shippori Mincho",serif;font-weight:600;}
+.access-mark{
+  aspect-ratio:1/1;border:1px solid var(--line);
+  display:flex;align-items:center;justify-content:center;
+  background:var(--washi-deep);
+}
+.access-mark svg{width:62%;}
+
+@media (max-width:860px){
+  .intro,.access-teaser{grid-template-columns:1fr;}
+  .teaser-grid{grid-template-columns:repeat(2,1fr);}
+  .hero-grid{grid-template-columns:1fr;min-height:auto;}
+  .hero-photo{height:56vh;}
+  .hero-text{padding:44px 28px;}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="headbar">
+    <a href="index.html" class="brandmark" aria-label="山田吉邦弓具店 ホーム">
+      <svg class="target-icon" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="18" fill="none" stroke="#1c1a17" stroke-width="1.2"/><circle cx="20" cy="20" r="12" fill="none" stroke="#1c1a17" stroke-width="1.2"/><circle cx="20" cy="20" r="4" fill="#a1402c"/></svg>
+      <span>山田吉邦弓具店</span>
+    </a>
+    <nav class="mainnav" aria-label="メインナビゲーション">
+      <a href="#top" class="active">トップ</a>
+      <a href="#about">理念</a>
+      <a href="#products">商品紹介</a>
+      <a href="#access">店舗案内・お問い合わせ</a>
+    </nav>
+    <button class="nav-toggle" aria-label="メニュー" id="navToggle"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero page-hero" id="top">
+  <div class="hero-grid wrap">
+    <div class="hero-photo">
+      <!-- Replace images/hero.jpg with your real photo or re-embed base64 if you prefer -->
+      <img src="images/hero.jpg" alt="店内のイメージ">
+      <div class="cap">東京・飯田橋にある伝統の弓道具店</div>
+    </div>
+    <div class="hero-text">
+      <div>
+        <span class="eyebrow">全日本弓道具協会加盟店</span>
+        <h1>山田吉邦弓具店 — 技と心を伝える弓道具</h1>
+        <p>弓・矢・弽などの製作・販売、点検・修理まで。経験豊かな矢師が丁寧に対応します。店舗での相談も歓迎。</p>
+        <div class="hero-cta-row">
+          <a href="#products" class="btn primary">商品を見る</a>
+          <a href="#access" class="btn ghost">アクセス・お問い合わせ</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INTRO -->
+<section class="wrap">
+  <div class="intro section-head">
+    <div class="intro-text">
+      <span class="eyebrow">私たちについて</span>
+      <h2 class="mincho">伝統と技を紡ぐ弓道具店</h2>
+      <p class="lead">山田吉邦弓具店は、初心者から上級者まで幅広く弓道具を取り扱っています。矢の調整や弓の点検もご相談ください。</p>
+      <p>店舗は飯田橋駅から徒歩数分。実物を手にとって選びたい方はぜひお越しください。全国発送も承ります。</p>
+      <a class="link-more" href="#access">店舗案内を詳しく見る →</a>
+    </div>
+    <div class="photo-slot filled" style="--ratio:4/5;">
+      <img src="images/shop.jpg" alt="店舗写真">
+      <div class="cap"><b>実店舗の様子</b> 店内で実際に手に取ってお選びいただけます。</div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS TEASER -->
+<section class="products-teaser">
+  <div class="wrap section-head center">
+    <span class="eyebrow">Products</span>
+    <h2>商品紹介</h2>
+    <p>弓・矢・弽など、用途に応じたおすすめの品を揃えています。</p>
+  </div>
+  <div class="wrap teaser-grid">
+    <div class="teaser-card">
+      <div class="icon">🏹</div>
+      <h3>弓</h3>
+      <p>初心者用〜専門家向けまで。試し引きの相談も可能です。</p>
+    </div>
+    <div class="teaser-card">
+      <div class="icon">🪶</div>
+      <h3>矢</h3>
+      <p>矢の製作・調整を承ります。的確な一本をお作りします。</p>
+    </div>
+    <div class="teaser-card">
+      <div class="icon">🎒</div>
+      <h3>弽（ゆがけ）</h3>
+      <p>着用しやすい弽を各種揃えています。素材・加工もご相談ください。</p>
+    </div>
+    <div class="teaser-card">
+      <div class="icon">🛠️</div>
+      <h3>修理・点検</h3>
+      <p>弓の反り直し・矢の修理など、長く使うためのメンテナンスを行います。</p>
+    </div>
+  </div>
+  <div class="wrap" style="text-align:center;padding-bottom:60px;">
+    <a class="link-more" href="#products">商品一覧をみる</a>
+  </div>
+</section>
+
+<!-- ACCESS -->
+<section id="access" class="wrap access-teaser">
+  <div>
+    <div class="access-mark">
+      <!-- simple SVG map-pin -->
+      <svg viewBox="0 0 24 24" width="60" height="60"><path fill="#a9884f" d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg>
+    </div>
+  </div>
+  <div>
+    <table>
+      <tr><td>住所</td><td>東京都千代田区飯田橋〇丁目（仮）</td></tr>
+      <tr><td>電話</td><td>03-xxxx-xxxx</td></tr>
+      <tr><td>営業時間</td><td>10:00 - 18:00（火曜定休）</td></tr>
+      <tr><td>アクセス</td><td>JR飯田橋駅 徒歩5分</td></tr>
+    </table>
+    <p style="margin-top:18px;">お問い合わせはフォームまたはお電話でどうぞ。実店舗での相談は予約がおすすめです。</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap footer-top">
+    <div class="footer-brand">
+      <span class="mincho">山田吉邦弓具店</span>
+      <p>伝統の技術で一本一本を丁寧に。弓道の楽しさと品質をお届けします。</p>
+    </div>
+    <div class="footer-cols">
+      <div>
+        <h4>メニュー</h4>
+        <ul>
+          <li><a href="#products">商品紹介</a></li>
+          <li><a href="#access">店舗案内</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>ショップ情報</h4>
+        <ul>
+          <li>営業：10:00 - 18:00</li>
+          <li>定休：火曜</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <div>© 山田吉邦弓具店</div>
+    <div>All Rights Reserved.</div>
+  </div>
+</footer>
+
+<script>
+  // シンプルなモバイルメニュー切替
+  (function(){
+    const toggle = document.getElementById('navToggle');
+    const nav = document.querySelector('nav.mainnav');
+    toggle.addEventListener('click', ()=> {
+      if (nav.style.display === 'flex') {
+        nav.style.display = '';
+      } else {
+        nav.style.display = 'flex';
+        nav.style.flexDirection = 'column';
+        nav.style.background = 'rgba(242,236,224,0.98)';
+        nav.style.position = 'absolute';
+        nav.style.top = '72px';
+        nav.style.right = '32px';
+        nav.style.padding = '12px';
+        nav.style.borderRadius = '6px';
+      }
+    });
+
+    // メニュー内リンクを押したら閉じる（モバイル時）
+    document.querySelectorAll('nav.mainnav a').forEach(a=>{
+      a.addEventListener('click', ()=> {
+        if (window.innerWidth <= 860) {
+          nav.style.display = '';
+        }
+      });
+    });
+
+    // リサイズ時にスタイルをリセット
+    window.addEventListener('resize', ()=> {
+      if (window.innerWidth > 860) {
+        nav.style.display = '';
+        nav.style.position = '';
+        nav.style.background = '';
+        nav.style.padding = '';
+        nav.style.borderRadius = '';
+        nav.style.flexDirection = '';
+      }
+    });
+  })();
+</script>
+</body>
+</html>
